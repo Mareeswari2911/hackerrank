@@ -1,0 +1,32 @@
+class Result {
+    public static int getTotalX(List<Integer> a, List<Integer> b) {
+    int count=0;
+    int maxa=Collections.max(a);
+    int minb=Collections.min(b);
+    for(int i=maxa;i<=minb;i++)
+    {
+        boolean flag1=true;
+        boolean flag2=true;
+        for(int j=0;j<a.size();j++)
+        {
+            if(i%a.get(j)!=0)
+            {
+                flag1=false;
+            }
+        }
+        for(int k=0;k<b.size();k++)
+        {
+            if(b.get(k)%i!=0)
+            {
+                flag2=false;
+            }
+        }
+        if(flag1 && flag2)
+        {
+            count++;
+        }
+    }
+    return count;
+    }
+
+}
